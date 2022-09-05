@@ -12,7 +12,6 @@ const getAllProducts = async () =>{
 }
 const saveProduct = async (productData) => {
     try {
-        console.trace(productData)
         const product =  await productModel.create(productData)
         return  product
     
@@ -20,4 +19,13 @@ const saveProduct = async (productData) => {
         throw(e)
     }
 }
-module.exports = {getAllProducts, saveProduct}
+const getProductById = async (productId) => {
+    try {
+        const product =  await productModel.findById(productId)
+        return  product
+    
+    } catch (e) {
+        throw(e)
+    }
+}
+module.exports = {getAllProducts, saveProduct, getProductById}

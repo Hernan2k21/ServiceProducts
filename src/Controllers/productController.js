@@ -1,5 +1,5 @@
 
-const {getAllProducts, saveProduct}= require('../Actions/products')
+const {getAllProducts, saveProduct, getProductById}= require('../Actions/products')
 const {validateSchema} = require('../Validations')
 const productSchema = require('../Validations/Schemas/product')
 module.exports = {
@@ -18,6 +18,15 @@ module.exports = {
         try {
             const productData = await validateSchema(req.body , productSchema)
             const product = await saveProduct(productData)
+            res.json(product)
+        } catch (e) {
+            next(e)
+        }
+    },
+    async getProductById(req, res, next) {
+
+        try {
+            const product = await getProductById(req.params.id)
             res.json(product)
         } catch (e) {
             next(e)
