@@ -5,7 +5,9 @@ const schema = new mongoose.Schema({
   name: String,
   description: String,
   details: mongoose.Schema.Types.Mixed,
-  price: Number
+  price: Number,
+  listed: Boolean,
+  stock: Number,
 });
 
 module.exports = mongoose.model("Product", schema);
