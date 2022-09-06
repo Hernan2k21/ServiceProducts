@@ -6,5 +6,13 @@ module.exports = {
     invalid_credentials:{
         httpCode: 401,
         message: 'Invalid credentials'
+    },
+    product_not_found: {
+        httpCode: 401,
+        message: 'Product not Found'
+    },
+    not_enought_stock: {
+        httpCode: 401,
+        message: 'Product has not enought stock'
     }
 }
