@@ -34,8 +34,6 @@ const [  SCHEMA_VALIDATION_ERROR, ORDER_VALIDATION_ERROR] = [
       this.name =  ORDER_VALIDATION_ERROR;
       this.httpCode = 400;
       this.message= params.message;
-      this.product = params.productId
-
     }
   }
   module.exports = {
